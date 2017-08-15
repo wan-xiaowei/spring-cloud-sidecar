@@ -1,0 +1,16 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: sidecar
+eureka:
+     client:
+       service-url:
+          defaultZone : http://root:root@discovery2:8762/eureka/,http://root:root@discovery:8761/eureka/
+     instance:
+       prefer-ip-address: true
+sidecar:
+  health-uri: http://localhost:8040/cia/cia-j/vat-tax/loadVatTaxInfo/1                      #指定非jvm项目的服务接口
+  port: 8060                                                                                 #端口
+  hostname:
+  ip-address:
